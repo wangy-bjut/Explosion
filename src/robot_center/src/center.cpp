@@ -644,15 +644,15 @@ void CENTRALCONTROLLING::execute(const robot_msgs::centerGoalConstPtr &goal, cen
         art.request.x = path[i].point.pose.pose[0];
         art.request.y = path[i].point.pose.pose[1];
 	    art.request.th =path[i].point.pose.pose[2];
-        cout << "art_result:"<< art.request.x << art.request.y << art.request.th << endl;
+        //cout << "art_result:"<< art.request.x << art.request.y << art.request.th << endl;
 
-        cout << client_nav.call(art) << endl;
+        //cout << client_nav.call(art) << endl;
 
-        // if(!client_nav.call(art))
-        // {
-        //     ROS_ERROR(" Navigation error !");
-        //     suspend=1;
-        // }
+        if(!client_nav.call(art))
+        {
+            ROS_ERROR(" Navigation error !");
+            suspend=1;
+        }
         
         stringstream ss;
         ss<< path[i].point_name << "  x:" << path[i].point.pose.pose[0] << "  y:" << path[i].point.pose.pose[1] << endl;

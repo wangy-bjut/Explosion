@@ -420,7 +420,7 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "robot_artificial");
 	ros::NodeHandle nh;
 	ros::Publisher cmd_vel_pub = nh.advertise<geometry_msgs::Twist>("cmd_vel", 1);
-	ros::ServiceServer service = nh.advertiseService("artificial", checkpose); //注册一个服务，使其他节点能够调用该服务
+	ros::ServiceServer service = nh.advertiseService("artificial", checkpose); //注册一个服务，使其他节点可以调用此服务
 	ros::Subscriber laser_sub = nh.subscribe("scan", 1, autonomous_behave);
 	ros::Subscriber acml_sub = nh.subscribe<robot_msgs::dgps>("ZGPS", 100, callback);
 
