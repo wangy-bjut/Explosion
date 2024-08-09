@@ -1,0 +1,8 @@
+prefix=/home/robot/Explosion_proof_robot/install
+
+Name: robot_artificial
+Description: Description of robot_artificial
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

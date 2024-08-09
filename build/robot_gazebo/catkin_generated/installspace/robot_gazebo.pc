@@ -1,0 +1,8 @@
+prefix=/home/robot/Explosion_proof_robot/install
+
+Name: robot_gazebo
+Description: Description of robot_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

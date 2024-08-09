@@ -1,0 +1,8 @@
+<launch>
+
+  <include file="$(find rplidar_ros)/launch/rplidar_a3.launch" /> <!--启动雷达-->
+  <include file="$(find robot_base)/launch/robot_control.launch" /> <!--启动底层和手柄-->
+  <include file="$(find robot_slam)/launch/robot_gmapping.launch" /> <!--gmapping建图-->
+  <include file="$(find robot_description)/launch/display.launch" /> <!--加载机器人模型-->
+
+</launch>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="camera_temp" type="main.py" name="main" />
+
+</launch>

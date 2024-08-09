@@ -1,0 +1,6 @@
+uint8 state #开始
+uint16 point_number #执行动作的点位
+---
+uint8 result    #动作完成或暂停时的输出结果
+---
+string message  #反馈给客户端数据

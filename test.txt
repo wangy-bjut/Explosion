@@ -1,0 +1,308 @@
+point_name: "'0'"
+time: "2023-05-31 18:54:23"
+chasis: 
+  pose: 
+    x: -8.41206359863
+    y: -1.49013781548
+    yaw: 2.90019989014
+  cmd: 
+    linear: 0.0
+    angular: 0.0
+camera: 
+  angle: 
+    yaw: 0.0
+    pitch: 0.0
+  control: 
+    direction: "stop"
+    angular_percent: 0.0
+    zero: False
+    scrub: False
+    light: False
+gas: 
+  result: 0.0
+temp: 
+  result: 0.0
+recognition: 
+  result: 0.790000021458
+  picture_path: "/home/robot/yolov7-meter1/result/2023-05-31_18-54-23.jpg"
+---
+point_name: "'1'"
+time: "2023-05-31 18:55:12"
+chasis: 
+  pose: 
+    x: -23.9429779053
+    y: 1.98948931694
+    yaw: 3.02929997444
+  cmd: 
+    linear: 0.0
+    angular: 0.0
+camera: 
+  angle: 
+    yaw: 0.0
+    pitch: 0.0
+  control: 
+    direction: "stop"
+    angular_percent: 0.0
+    zero: False
+    scrub: False
+    light: False
+gas: 
+  result: 0.0
+temp: 
+  result: 0.0
+recognition: 
+  result: 1.15999996662
+  picture_path: "/home/robot/yolov7-meter1/result/2023-05-31_18-55-12.jpg"
+---
+point_name: "'2'"
+time: "2023-05-31 18:55:12"
+chasis: 
+  pose: 
+    x: -2.07349920273
+    y: -4.62292480469
+    yaw: -0.20759999752
+  cmd: 
+    linear: 0.0
+    angular: 0.0
+camera: 
+  angle: 
+    yaw: 0.0
+    pitch: 0.0
+  control: 
+    direction: "stop"
+    angular_percent: 0.0
+    zero: False
+    scrub: False
+    light: False
+gas: 
+  result: 0.0
+temp: 
+  result: 0.0
+recognition: 
+  result: 1.15999996662
+  picture_path: "/home/robot/yolov7-meter1/result/2023-05-31_18-55-12.jpg"
+---
+point_name: "'3'"
+time: "2023-05-31 18:55:12"
+chasis: 
+  pose: 
+    x: -5.80319881439
+    y: -5.90854358673
+    yaw: 2.60770010948
+  cmd: 
+    linear: 0.0
+    angular: 0.0
+camera: 
+  angle: 
+    yaw: 0.0
+    pitch: 0.0
+  control: 
+    direction: "stop"
+    angular_percent: 0.0
+    zero: False
+    scrub: False
+    light: False
+gas: 
+  result: 0.0
+temp: 
+  result: 0.0
+recognition: 
+  result: 1.15999996662
+  picture_path: "/home/robot/yolov7-meter1/result/2023-05-31_18-55-12.jpg"
+---
+point_name: "'4'"
+time: "2023-05-31 18:55:12"
+chasis: 
+  pose: 
+    x: -7.29266166687
+    y: -4.92720603943
+    yaw: 2.41869997978
+  cmd: 
+    linear: 0.0
+    angular: 0.0
+camera: 
+  angle: 
+    yaw: 0.0
+    pitch: 0.0
+  control: 
+    direction: "stop"
+    angular_percent: 0.0
+    zero: False
+    scrub: False
+    light: False
+gas: 
+  result: 0.0
+temp: 
+  result: 0.0
+recognition: 
+  result: 1.15999996662
+  picture_path: "/home/robot/yolov7-meter1/result/2023-05-31_18-55-12.jpg"
+---
+point_name: "'5'"
+time: "2023-05-31 18:55:12"
+chasis: 
+  pose: 
+    x: -7.97915649414
+    y: -4.48400020599
+    yaw: 2.75440001488
+  cmd: 
+    linear: 0.0
+    angular: 0.0
+camera: 
+  angle: 
+    yaw: 0.0
+    pitch: 0.0
+  control: 
+    direction: "stop"
+    angular_percent: 0.0
+    zero: False
+    scrub: False
+    light: False
+gas: 
+  result: 0.0
+temp: 
+  result: 0.0
+recognition: 
+  result: 1.15999996662
+  picture_path: "/home/robot/yolov7-meter1/result/2023-05-31_18-55-12.jpg"
+---
+point_name: "'0'"
+time: "2023-05-31 19:03:04"
+chasis: 
+  pose: 
+    x: -9.96636772156
+    y: -3.45113277435
+    yaw: 2.69950008392
+  cmd: 
+    linear: 0.0
+    angular: 0.0
+camera: 
+  angle: 
+    yaw: 0.0
+    pitch: 0.0
+  control: 
+    direction: "stop"
+    angular_percent: 0.0
+    zero: False
+    scrub: False
+    light: False
+gas: 
+  result: 0.0
+temp: 
+  result: 0.0
+recognition: 
+  result: 0.800000011921
+  picture_path: "/home/robot/yolov7-meter1/result/2023-05-31_19-03-04.jpg"
+---
+point_name: "'1'"
+time: "2023-05-31 19:03:04"
+chasis: 
+  pose: 
+    x: -23.6761493683
+    y: 4.01192474365
+    yaw: 2.61310005188
+  cmd: 
+    linear: 0.0
+    angular: 0.0
+camera: 
+  angle: 
+    yaw: 0.0
+    pitch: 0.0
+  control: 
+    direction: "stop"
+    angular_percent: 0.0
+    zero: False
+    scrub: False
+    light: False
+gas: 
+  result: 0.0
+temp: 
+  result: 0.0
+recognition: 
+  result: 0.800000011921
+  picture_path: "/home/robot/yolov7-meter1/result/2023-05-31_19-03-04.jpg"
+---
+point_name: "'2'"
+time: "2023-05-31 19:03:04"
+chasis: 
+  pose: 
+    x: -4.15411090851
+    y: -7.69744968414
+    yaw: -0.63480001688
+  cmd: 
+    linear: 0.0
+    angular: 0.0
+camera: 
+  angle: 
+    yaw: 0.0
+    pitch: 0.0
+  control: 
+    direction: "stop"
+    angular_percent: 0.0
+    zero: False
+    scrub: False
+    light: False
+gas: 
+  result: 0.0
+temp: 
+  result: 0.0
+recognition: 
+  result: 0.800000011921
+  picture_path: "/home/robot/yolov7-meter1/result/2023-05-31_19-03-04.jpg"
+---
+point_name: "'3'"
+time: "2023-05-31 19:03:04"
+chasis: 
+  pose: 
+    x: -8.20953655243
+    y: -8.04236125946
+    yaw: 2.46379995346
+  cmd: 
+    linear: 0.0
+    angular: 0.0
+camera: 
+  angle: 
+    yaw: 0.0
+    pitch: 0.0
+  control: 
+    direction: "stop"
+    angular_percent: 0.0
+    zero: False
+    scrub: False
+    light: False
+gas: 
+  result: 0.0
+temp: 
+  result: 0.0
+recognition: 
+  result: 0.800000011921
+  picture_path: "/home/robot/yolov7-meter1/result/2023-05-31_19-03-04.jpg"
+---
+point_name: "'4'"
+time: "2023-05-31 19:03:04"
+chasis: 
+  pose: 
+    x: -8.83203792572
+    y: -7.44900035858
+    yaw: 2.27670001984
+  cmd: 
+    linear: 0.0
+    angular: 0.0
+camera: 
+  angle: 
+    yaw: 0.0
+    pitch: 0.0
+  control: 
+    direction: "stop"
+    angular_percent: 0.0
+    zero: False
+    scrub: False
+    light: False
+gas: 
+  result: 0.0
+temp: 
+  result: 0.0
+recognition: 
+  result: 0.800000011921
+  picture_path: "/home/robot/yolov7-meter1/result/2023-05-31_19-03-04.jpg"
+---

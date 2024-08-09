@@ -1,0 +1,13 @@
+float64 x
+float64 y
+float64 z
+float64 roll
+float64 pitch
+float64 yaw
+float64 by_pose0
+float64 by_pose1
+float64 sin_th_q1
+float64 cos_th_q1
+float64 sin_th
+float64 cos_th
+float64 bbyyy

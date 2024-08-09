@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="detection_service" type="detection_service.py" name="detection_service" respawn="true">    
+    </node>
+</launch>

@@ -1,0 +1,23 @@
+
+(cl:in-package :asdf)
+
+(defsystem "robot_msgs-srv"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils )
+  :components ((:file "_package")
+    (:file "Float64" :depends-on ("_package_Float64"))
+    (:file "_package_Float64" :depends-on ("_package"))
+    (:file "Gas_alarm" :depends-on ("_package_Gas_alarm"))
+    (:file "_package_Gas_alarm" :depends-on ("_package"))
+    (:file "PtzPreset" :depends-on ("_package_PtzPreset"))
+    (:file "_package_PtzPreset" :depends-on ("_package"))
+    (:file "alarm_srv" :depends-on ("_package_alarm_srv"))
+    (:file "_package_alarm_srv" :depends-on ("_package"))
+    (:file "nav_goal" :depends-on ("_package_nav_goal"))
+    (:file "_package_nav_goal" :depends-on ("_package"))
+    (:file "recognition_scale" :depends-on ("_package_recognition_scale"))
+    (:file "_package_recognition_scale" :depends-on ("_package"))
+    (:file "setint16" :depends-on ("_package_setint16"))
+    (:file "_package_setint16" :depends-on ("_package"))
+    (:file "temp_detection" :depends-on ("_package_temp_detection"))
+    (:file "_package_temp_detection" :depends-on ("_package"))
+  ))

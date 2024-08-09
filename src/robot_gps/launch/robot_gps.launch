@@ -1,0 +1,7 @@
+<launch>
+    <!--运行GPS机器人定位节点-->
+    <node pkg="robot_gps" type="robot_gps" name="robot_gps" respawn="true" output="screen">
+        <!--设置串口值参数-->
+        <param name="ser_by"         type="string" value="/dev/ttygps"/>
+    </node>
+</launch>

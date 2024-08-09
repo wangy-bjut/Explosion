@@ -1,0 +1,20 @@
+###以下是选择路径,默认为/Path0
+PATH: /Path0
+NAME: "path0"
+###以下是路径上的点，起始必须从point0开始，每一个包含它的前节点和后节点。
+###point0前节点填“start”，结束节点填“end”代表结束，填“ring”代表这是一个环形路径。
+
+Path0:
+  point0:
+    prior: "start"
+    next: /point1
+  point1:
+    prior: /point0
+    next: /point2
+  point2:
+    prior: /point1
+    next: end
+
+
+
+  

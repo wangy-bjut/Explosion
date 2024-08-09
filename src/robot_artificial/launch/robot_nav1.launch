@@ -1,0 +1,6 @@
+<launch>
+    <!--node pkg="robot_gps" type="dgps_sinan" name="dgps_sinan" respawn="true">
+    </node-->
+    <node pkg="robot_artificial" type="artificial1" name="artificial1">
+    </node>
+</launch>

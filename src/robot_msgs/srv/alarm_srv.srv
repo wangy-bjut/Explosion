@@ -1,0 +1,6 @@
+int64 volume
+int64 loop_mode
+int64 filename
+int64 fileorder
+---
+bool result

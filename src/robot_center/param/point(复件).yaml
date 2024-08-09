@@ -1,0 +1,33 @@
+point0:
+  pose:
+    x: -132.7660825221653
+    y: -59.12111078308639
+    th: 273.6643
+  name: "'0'"
+  angle:
+    yaw: 0
+    pitch: 0
+  setp: 0
+
+point1:
+  angle:
+    pitch: 0
+    yaw: 0
+  setp: 0
+  name: "'1'"
+  pose:
+    x: -133.2941629656301
+    y: -50.64624624788432
+    th: 267.5677
+
+point2:
+  angle:
+    yaw: 0
+    pitch: 0
+  pose:
+    x: -133.3442947816515
+    th: 269.1613
+    y: -40.38701670776653
+  name: "'2'"
+  setp: 0
+

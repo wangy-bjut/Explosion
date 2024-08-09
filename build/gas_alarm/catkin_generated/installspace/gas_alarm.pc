@@ -1,0 +1,8 @@
+prefix=/home/robot/Explosion_proof_robot/install
+
+Name: gas_alarm
+Description: Description of gas_alarm
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

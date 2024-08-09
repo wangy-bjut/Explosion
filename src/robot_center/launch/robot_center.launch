@@ -1,0 +1,27 @@
+<launch>
+    <include file="$(find robot_base)/launch/robot_base.launch" />
+
+    <include file="$(find robot_description)/launch/display.launch" />
+
+    <include file="$(find gas_alarm)/launch/gas_alarm.launch" />
+
+    <include file="$(find camera_temp)/launch/camera_temp.launch" />
+
+    <include file="$(find robot_artificial)/launch/robot_nav.launch" />
+    <include file="$(find detection_service)/launch/detection_service.launch" />
+    <!--include file="$(find robot_gps)/launch/robot_gps.launch"/-->
+
+    <include file="$(find alarm_device)/launch/robot_alarm_control.launch" />
+
+    <node pkg="robot_center" type="center" name="center" output="screen" >
+        <rosparam file="$(find robot_center)/param/point.yaml" command="load" />
+        <rosparam file="$(find robot_center)/param/path.yaml" command="load" />
+
+        <param name="folder_base_path" value="/home/robot/Explosion_proof_robot/datas/" type="string" />
+    </node>
+
+    <node pkg="robot_center" type="center_client" name="center_client" />
+
+    <node pkg="robot_navigation" type="cloud_nav_node" name="cloud_nav_node" />
+    
+</launch>

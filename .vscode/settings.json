@@ -1,0 +1,16 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/robot/Explosion_proof_robot/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/robot/Explosion_proof_robot/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ],
+    "cmake.sourceDirectory": "${workspaceFolder}/build/catkin_generated/metapackages/rslidar",
+    "files.associations": {
+        "fstream": "cpp",
+        "*.ipp": "cpp",
+        "*.tcc": "cpp"
+    }
+}

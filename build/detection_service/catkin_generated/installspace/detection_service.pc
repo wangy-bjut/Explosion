@@ -1,0 +1,8 @@
+prefix=/home/robot/Explosion_proof_robot/install
+
+Name: detection_service
+Description: Description of detection_service
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

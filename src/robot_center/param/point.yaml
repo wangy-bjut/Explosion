@@ -1,0 +1,33 @@
+point0:
+  pose:
+    x: 0
+    y: 0
+    th: 0
+  name: "'0'"
+  angle:
+    yaw: 0
+    pitch: 0
+  setp: 0
+
+point1:
+  angle:
+    pitch: 0
+    yaw: 0
+  setp: 0
+  name: "'1'"
+  pose:
+    th: 0
+    y: 0
+    x: 0
+
+point2:
+  angle:
+    yaw: 0
+    pitch: 0
+  pose:
+    y: 0
+    x: 0
+    th: 0
+  name: "'2'"
+  setp: 0
+

@@ -1,0 +1,55 @@
+<launch>
+  <!--当设置为true时，AMCL将会订阅map话题，而不是调用服务返回地图。也就是说当设置为true时，有另外一个节点实时的发布map话题，
+  也就是机器人在实时的进行地图构建，并供给amcl话题使用；当设置为false时，通过map server，也就是调用已经构建完成的地图。-->
+  <arg name="use_map_topic"   default="false"/>
+  <arg name="scan_topic"      default="scan"/>                             <!--扫描话题-->
+  <arg name="initial_pose_x"  default="0.0"/>                              <!--初始位姿均值x,用于初始化高斯分布滤波器-->
+  <arg name="initial_pose_y"  default="0.0"/>                              <!--初始位姿均值y,用于初始化高斯分布滤波器-->
+  <arg name="initial_pose_a"  default="0.0"/>                              <!--初始位姿均值（yaw）,用于初始化高斯分布滤波器-->
+ 
+  <arg name="odom_frame_id"   default="odom"/>                             <!--里程计默认坐标-->
+  <arg name="base_frame_id"   default="base_link"/>                        <!--机器人基坐标-->
+  <arg name="global_frame_id" default="map"/>                              <!--全局坐标-->
+ 
+  <node pkg="amcl" type="amcl" name="amcl">
+    <param name="use_map_topic"             value="$(arg use_map_topic)"/>
+    <!-- Publish scans from best pose at a max of 10 Hz -->
+    <param name="odom_model_type"           value="diff"/>                   <!--选择odom模型，diff差速模型，omni全向模型-->
+    <param name="odom_alpha5"               value="0.1"/>                    <!--移相关的噪声参数（仅用于模型是“omni”的情况,默认0-->
+    <param name="gui_publish_rate"          value="10.0"/>                   <!--扫描和路径发布到可视化软件的最大频率-->
+    <param name="laser_max_beams"           value="120"/>                    <!--更新滤波器时，每次扫描中多少个等间距的光束被使用-->
+    <param name="laser_max_range"           value="80.0"/>                   <!--最大扫描范围，参数设置为-1.0时，将会使用激光上报的最大扫描范围-->
+    <param name="min_particles"             value="500"/>                    <!--滤波器中的最少粒子数，值越大定位效果越好，但是相应的会增加主控平台的计算资源消耗-->
+    <param name="max_particles"             value="5000"/>                   <!--滤波器中最多粒子数，是一个上限值-->
+    <param name="kld_err"                   value="0.05"/>                   <!--真实分布与估计分布之间的最大误差-->
+    <param name="kld_z"                     value="0.99"/>                   <!--上标准分位数（1-p），其中p是估计分布上误差小于kld_err的概率-->
+    <param name="odom_alpha1"               value="0.2"/>                    <!--机器人运动部分的旋转分量估计的里程计旋转的期望噪声-->
+    <param name="odom_alpha2"               value="0.2"/>                    <!--机器人运动部分的平移分量估计的里程计旋转的期望噪声-->
+    <!-- translation std dev, m -->
+    <param name="odom_alpha3"               value="0.8"/>                    <!--机器人运动部分的平移分量估计的里程计平移的期望噪声-->
+    <param name="odom_alpha4"               value="0.2"/>                    <!--机器人运动部分的旋转分量估计的里程计平移的期望噪声-->
+    <param name="laser_z_hit"               value="0.5"/>                    <!--模型的z_hit部分的混合权值-->
+    <param name="laser_z_short"             value="0.05"/>                   <!--模型的z_short部分的混合权值-->
+    <param name="laser_z_max"               value="0.05"/>                   <!--模型的z_max部分的混合权值-->
+    <param name="laser_z_rand"              value="0.5"/>                    <!--模型的z_rand部分的混合权值-->
+    <param name="laser_sigma_hit"           value="0.2"/>                    <!--被用在模型的z_hit部分的高斯模型的标准差-->
+    <param name="laser_lambda_short"        value="0.1"/>                    <!--模型z_short部分的指数衰减参数-->
+    <param name="laser_model_type"          value="likelihood_field"/>       <!--激光模型类型定义，可以是beam, likehood_field, likehood_field_prob-->
+    <!-- <param name="laser_model_type" value="beam"/> -->
+    <param name="laser_likelihood_max_dist" value="2.0"/>                    <!--地图上做障碍物膨胀的最大距离-->
+    <param name="update_min_d"              value="0.2"/>                    <!--在执行滤波更新前平移运动的距离-->
+    <param name="update_min_a"              value="0.4"/>                    <!--执行滤波更新前旋转的角度-->
+    <param name="odom_frame_id"             value="$(arg odom_frame_id)"/>   
+    <param name="base_frame_id"             value="$(arg base_frame_id)"/> 
+    <param name="global_frame_id"           value="$(arg global_frame_id)"/>
+    <param name="resample_interval"         value="0.5"/>                    <!--在重采样前需要滤波更新的次数-->
+    <!-- Increase tolerance because the computer can get quite busy -->
+    <param name="transform_tolerance"       value="0.1"/>                    <!--tf变换发布推迟的时间-->
+  <param name="recovery_alpha_slow" value="0.0"/>                            <!--慢速的平均权重滤波的指数衰减频率，用作决定什么时候通过增加随机位姿来recover-->
+  <param name="recovery_alpha_fast" value="0.0"/>                            <!--快速的平均权重滤波的指数衰减频率，用作决定什么时候通过增加随机位姿来recover-->
+    <<param name="initial_pose_x"            value="$(arg initial_pose_x)"/>
+    <param name="initial_pose_y"            value="$(arg initial_pose_y)"/>
+    <param name="initial_pose_a"            value="$(arg initial_pose_a)"/>
+    <remap from="scan"                      to="$(arg scan_topic)"/>
+  </node>
+</launch>

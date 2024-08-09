@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="gas_alarm" type="gas_alarm_server.py" name="gas_alarm_server" >
+        <param name="Serial_Port" value="/dev/ttygas" type="string" />
+    </node>
+
+</launch>

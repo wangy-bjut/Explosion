@@ -1,0 +1,2 @@
+float64 result
+string picture_path

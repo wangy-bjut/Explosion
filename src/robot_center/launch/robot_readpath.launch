@@ -1,0 +1,4 @@
+<launch>
+    <rosparam file="$(find robot_center)/param/point.yaml" command="load" ns="/center"/>
+    <rosparam file="$(find robot_center)/param/path.yaml" command="load"  ns="/center"/>
+</launch>

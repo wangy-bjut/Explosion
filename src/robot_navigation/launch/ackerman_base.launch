@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+
+    <rosparam file="$(find robot_navigation)/param/ackerman/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find robot_navigation)/param/ackerman/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find robot_navigation)/param/ackerman/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find robot_navigation)/param/ackerman/global_costmap_params.yaml" command="load" />
+
+    <rosparam file="$(find robot_navigation)/param/ackerman/move_base_params.yaml" command="load" />
+    <rosparam file="$(find robot_navigation)/param/ackerman/base_global_planner_params.yaml" command="load" />
+    <rosparam file="$(find robot_navigation)/param/ackerman/teb_local_planner_params.yaml" command="load" />
+  </node>
+</launch> 

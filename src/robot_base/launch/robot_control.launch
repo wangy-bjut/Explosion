@@ -1,0 +1,23 @@
+<launch>
+	<node pkg="robot_base" type="robot_controller" name="robot_controller" >
+		<param name="serialport" type="string" value="/dev/ttyUSB0"/>	<!--串口名-->
+		<param name="ang_multiply" type="double" value="0.5" />		<!--角度倍率-->
+		<param name="linear_multiply" type="double" value="0.5" />	<!--线速度倍率-->
+
+		<param name="joint1" type="string" value="cloud_yaw_joint"/>	<!--云台航偏角-->
+		<param name="joint2" type="string" value="cloud_pitch_joint"/>	<!--云台俯仰角-->
+		<param name="joint3" type="string" value="fl_yaw_joint"/>	<!--前左轮航偏角-->
+		<param name="joint4" type="string" value="fl_wheel_joint"/>	<!--前左轮转动角-->
+		<param name="joint5" type="string" value="fr_yaw_joint"/>	<!--前右轮航偏角-->
+		<param name="joint6" type="string" value="fr_wheel_joint"/>	<!--前右轮转动角-->
+		<param name="joint7" type="string" value="bl_wheel_joint"/>	<!--后左轮转动角-->
+		<param name="joint8" type="string" value="br_wheel_joint"/>	<!--后右轮转动角-->
+		<param name="joint9" type="string" value="valodyne_joint"/>	<!--三维激光雷达转动角-->
+
+		<param name="cmd_yaw_max" type="double" value="0.8"/>	<!--云台yaw速度-->
+		<param name="cmd_pitch_max" type="double" value="0.8"/>	<!--云台pitch速度-->
+	</node>
+	
+	<include file= "$(find robot_joy)/launch/transform_joy.launch" />  
+
+</launch>

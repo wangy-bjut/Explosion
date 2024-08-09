@@ -1,0 +1,8 @@
+prefix=/home/robot/Explosion_proof_robot/devel
+
+Name: camera_temp
+Description: Description of camera_temp
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,18 @@
+[2023-03-26 21:09:01.399][DBG] CCoreGlobalCtrlBase::LoadDSo, HPR_LoadDSo Succ, Path[/home/robot/miniconda3/lib/libz.so.1.2.12], hHandleRet[899787552]
+[2023-03-26 21:09:01.399][INF] The COM:HCCoreBase ver is 6.1.4.15, 2020_03_05. Async:1.
+[2023-03-26 21:09:01.399][INF] The COM:Core ver is 6.1.9.47, 2022_11_11. Async:1.
+[2023-03-26 21:09:01.399][INF] This HCNetSDK ver is 6.1.9.47 Ver 2022_11_11.
+[2023-03-26 21:09:01.402][DBG] CComBase::Load, Load szDllPath[/home/robot/Explosion_proof_robot/src/camera_temp/src/lib/linux/HCNetSDKCom/libHCPreview.so] SUCC
+[2023-03-26 21:09:01.402][INF] AbilityAnalyze---Init-- start
+[2023-03-26 21:09:01.402][DBG] AbilityAnalyze---Init-- over, DeviceList path [/home/robot/Explosion_proof_robot/src/camera_temp/src/lib/linux/HCNetSDKCom/LocalXml/DeviceList.xml], load result[0]
+[2023-03-26 21:09:01.402][INF] The COM:Preview ver is 6.1.9.47, 2022_11_11.
+[2023-03-26 21:09:01.445][INF] Private connect 192.168.1.65:8000 sock=140 this=0x880fa3a4 cmd=0x113424 port=51080
+[2023-03-26 21:09:01.831][INF] Login dev 192.168.1.65:8000.
+[2023-03-26 21:09:01.832][INF] Private connect 192.168.1.65:8000 sock=140 this=0x880fa3a4 cmd=0x10000 port=51084
+[2023-03-26 21:09:01.832][INF] LogonDev1 in[192.168.1.65:8000]
+[2023-03-26 21:09:01.842][INF] The COM:HCCoreBase ver is 6.1.4.15, 2020_03_05. Async:1.
+[2023-03-26 21:09:01.842][INF] The COM:Core ver is 6.1.9.47, 2022_11_11. Async:1.
+[2023-03-26 21:09:01.842][INF] This HCNetSDK ver is 6.1.9.47 Ver 2022_11_11.
+[2023-03-26 21:09:01.842][INF] COM_Logout[1][1]
+[2023-03-26 21:09:01.842][DBG] CUserMgr::UnRegisterHeartProxy[1]
+[2023-03-26 21:09:01.895][INF] Private connect 192.168.1.65:8000 sock=140 this=0x880fa3a4 cmd=0x10100 port=51094

@@ -1,0 +1,4 @@
+float64 data    #Unit: metre
+---
+bool success
+string message

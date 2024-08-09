@@ -1,0 +1,2 @@
+robot_msgs/robot_pose pose
+robot_msgs/robot_cmd cmd

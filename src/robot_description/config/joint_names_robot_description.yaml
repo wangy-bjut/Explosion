@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'fl_yaw_joint', 'fl_wheel_joint', 'fr_yaw_joint', 'fr_wheel_joint', 'bl_wheel_joint', 'br_wheel_joint', 'cloud_yaw_joint', 'cloud_pitch_joint', 'valodyne_joint', ]
