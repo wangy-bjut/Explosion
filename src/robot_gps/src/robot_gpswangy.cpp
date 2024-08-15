@@ -10,6 +10,10 @@
 #include <robot_msgs/dgps.h>          //自定义话题数据包
 #include <iostream>
 
+#include "nav_msgs/Odometry.h"
+#include "tf/tf.h"
+#include "geometry_msgs/Twist.h"
+
 #define PI 3.1415
 #define SULUTION_STATE(str1, str2) printf("%s error => %s\n", str1, str2)
 #define ERROR_DISTANCE 0.1
@@ -19,7 +23,7 @@ using namespace std;
 serial::Serial ser_by;
 double pose[4] = {0};
 
-double x, y, z;
+double  x, y, z;
 double roll, pitch, yaw;
 
 struct Result
@@ -142,17 +146,33 @@ void analysis1(std::string s)
 }
 
 // odomcallback
-void OdomCallback(const nav_msgs::Odometry::ConstPtr &msg)
+void odomCallback(const nav_msgs::Odometry::ConstPtr &msg)
 {
- 
+    
     x = msg->pose.pose.position.x;
     y = msg->pose.pose.position.y;
     z = msg->pose.pose.position.z;
-    tf::Quaternion quat;                                     //定义一个四元数
-    tf::quaternionMsgToTF(msg->pose.pose.orientation, quat); //取出方向存储于四元数
-    tf::Matrix3x3(quat).getRPY(roll, pitch, yaw);
- 
-    ROS_INFO("Odom: %f, %f, %f, %f, %f, %f", x, y, z, roll, pitch, yaw);
+
+    ROS_INFO("Position: x=%f, y=%fpos, z=%f",  x, y, z);
+
+   // pose[0] = x;
+   // pose[1] = y;
+    //pose[2] = 0;
+
+    tf::Quaternion quaternion(
+        msg->pose.pose.orientation.x,
+        msg->pose.pose.orientation.y,
+        msg->pose.pose.orientation.z,
+        msg->pose.pose.orientation.w);
+
+    double roll, pitch, yaw;
+    tf::Matrix3x3(quaternion).getRPY(roll, pitch, yaw); // quaternion change to euler-angles
+    
+    yaw = yaw * 180 / M_PI;
+
+    ROS_INFO("roll = %.0f, pitch = %.0f, yaw = %.0f", roll, pitch, yaw);
+    //pose[3] = yaw;
+
 }
 
 int main(int argc, char **argv)
@@ -161,6 +181,9 @@ int main(int argc, char **argv)
     // 声明节点句柄
     ros::NodeHandle n("~");
     ros::NodeHandle nh;
+    
+
+    ros::Subscriber odom_sub = nh.subscribe<nav_msgs::Odometry>("odom", 10, odomCallback);
 
     // 注册Publisher到话题GPS
     ros::Publisher dgps_pub = nh.advertise<robot_msgs::dgps>("ZGPS", 1000);
@@ -300,10 +323,11 @@ int main(int argc, char **argv)
             gps.cos_th = cos_th;
             gps.bbyyy = bbyyy;
 
-            //获取odm 数据替换gps 数据 话题添加 /
-            sub_pose = nh.subscribe<robot_msgs::dgps>("/odom", 1, odomcallBack);
+            //获取odm 数据替换gps 数据
             //odom 传递的数据类型是什么
-            
+            ROS_INFO("odom: %f", x);
+
+            ros::spinOnce();
             gps.x = x;
             gps.y = y;
             gps.yaw = yaw;

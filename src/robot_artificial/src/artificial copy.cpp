@@ -423,9 +423,6 @@ int main(int argc, char **argv)
 	ros::ServiceServer service = nh.advertiseService("artificial", checkpose); //注册一个服务，使其他节点可以调用此服务
 	ros::Subscriber laser_sub = nh.subscribe("scan", 1, autonomous_behave);
 	ros::Subscriber acml_sub = nh.subscribe<robot_msgs::dgps>("ZGPS", 100, callback);
-	
-	//odom
-	ros::Subscriber subOdom = node.subscribe("odom", 100, OdomCallback);
 
 	// 启动一个异步事件循环
 	// 通常在ROS节点的主函数中使用，以确保节点能够持续运行并处理回调函数，直到ROS系统关闭

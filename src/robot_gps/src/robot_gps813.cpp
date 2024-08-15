@@ -19,9 +19,6 @@ using namespace std;
 serial::Serial ser_by;
 double pose[4] = {0};
 
-double x, y, z;
-double roll, pitch, yaw;
-
 struct Result
 {
     double by_pose0;
@@ -139,20 +136,6 @@ void analysis1(std::string s)
     }
     else
         SULUTION_STATE("$GNHDT", "Navigation Angle has some problems...");
-}
-
-// odomcallback
-void OdomCallback(const nav_msgs::Odometry::ConstPtr &msg)
-{
- 
-    x = msg->pose.pose.position.x;
-    y = msg->pose.pose.position.y;
-    z = msg->pose.pose.position.z;
-    tf::Quaternion quat;                                     //定义一个四元数
-    tf::quaternionMsgToTF(msg->pose.pose.orientation, quat); //取出方向存储于四元数
-    tf::Matrix3x3(quat).getRPY(roll, pitch, yaw);
- 
-    ROS_INFO("Odom: %f, %f, %f, %f, %f, %f", x, y, z, roll, pitch, yaw);
 }
 
 int main(int argc, char **argv)
@@ -299,15 +282,6 @@ int main(int argc, char **argv)
             gps.sin_th = sin_th;
             gps.cos_th = cos_th;
             gps.bbyyy = bbyyy;
-
-            //获取odm 数据替换gps 数据 话题添加 /
-            sub_pose = nh.subscribe<robot_msgs::dgps>("/odom", 1, odomcallBack);
-            //odom 传递的数据类型是什么
-            
-            gps.x = x;
-            gps.y = y;
-            gps.yaw = yaw;
-
             dgps_pub.publish(gps); // 发布话题
             cout << res.by_pose0 << "\t" << res.by_pose1 << "\n";
         }

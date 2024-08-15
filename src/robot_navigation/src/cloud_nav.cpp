@@ -33,7 +33,7 @@ Cloud_Planner::Cloud_Planner()
     nh.param<double>("/get_points_joy/angular_percent", angular_percent, 30);
     planner_service = nh.advertiseService("cloud_terrace", &Cloud_Planner::planner_callback, this);
     cloudpose_sub = nh.subscribe<robot_msgs::camera>("cloud_info", 1, &Cloud_Planner::sub_callback, this);
-    cloudcontrol_pub = nh.advertise<robot_msgs::cloud_control>("cloud_control", 1);
+    cloudcontrol_pub = nh.advertise<robot_msgs::cloud_control>("cloud_control", 1);  
 }
 
 Cloud_Planner::~Cloud_Planner()

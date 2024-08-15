@@ -347,7 +347,7 @@ CENTRALCONTROLLING::CENTRALCONTROLLING():centerserver(nh,"center_server",boost::
     nh.param("/models_joy/alarm_volume", alarm_volume, 20);
     
     centerserver.start();   
-    suspend = 0;  
+    suspend = 0;  // 没有调用此服务 suspend一直是0
     server_suspend=nh.advertiseService("center_suspend",&CENTRALCONTROLLING::suspend_callback,this);    //实例化悬停服务器对象，并绑定服务回调函数suspend_callback
     
     client_nav=nh.serviceClient<robot_msgs::nav_goal>("artificial"); //artificial 中定义了service, 此处定义请求client    
@@ -653,7 +653,7 @@ void CENTRALCONTROLLING::execute(const robot_msgs::centerGoalConstPtr &goal, cen
             ROS_ERROR(" Navigation error !");
             suspend=1;
         }
-        
+        // 创建一个字符串流对象，将point_name 的值以及“ ”内的值存储在ss中
         stringstream ss;
         ss<< path[i].point_name << "  x:" << path[i].point.pose.pose[0] << "  y:" << path[i].point.pose.pose[1] << endl;
         feedback.message=ss.str();
@@ -731,6 +731,7 @@ void CENTRALCONTROLLING::execute(const robot_msgs::centerGoalConstPtr &goal, cen
         if(hover_function(as))  goto end;
         else {}
     }//end for
+
 	cout << "end for ------" <<endl;
     result_.result = 1;
     as->setSucceeded(result_);  //反馈动作执行结果
